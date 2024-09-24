@@ -1,0 +1,62 @@
+/* src\app.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --box-shadow: 0 1px 2px 0 rgba(218, 224, 229, 0.2), 0 3px 10px 0 rgba(218, 224, 229, 0.2);
+  /* Example shadow */
+}
+
+/* Define custom styles for the event card component */
+@layer components {
+
+  .event-card {
+    @apply rounded-lg shadow transition-all duration-300 ease-in-out;
+    background-color: var(--event-card-bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--separator-line-color);
+    /* margin: 0.5rem; */
+    margin-top: 1rem;
+    /* margin-bottom: 0.5rem; */
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      @apply bg-opacity-90;
+      box-shadow: 0 0 0 0.125rem var(--logo-color);
+    }
+  }
+
+  .event-card--header {
+    @apply flex justify-between items-center mb-4
+  }
+
+  .event-card--content {
+    @apply mb-4
+  }
+
+  .event-card-avatar {
+    @apply bg-gray-300 rounded-full object-cover;
+    @apply w-10 h-10 xs:w-10 xs:h-10 sm:w-10 sm:h-10 md:w-10 md:h-10 lg:w-12 lg:h-12;
+    /* border: 1px solid var(--separator-line-color); */
+  }
+
+  .event-card-avatar--loading {
+    @apply animate-pulse;
+  }
+
+  .event-card-avatar--error {
+    @apply bg-red-500;
+  }
+
+  .rounded-icon {
+    @apply rounded-full;
+    @apply w-10 h-10 xs:w-10 xs:h-10 sm:w-10 sm:h-10 md:w-10 md:h-10 lg:w-10 lg:h-10;
+    /* border: 1px solid var(--separator-line-color); */
+  }
+
+}
